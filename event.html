@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Yoga Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="Yoga_c/yoga-logo_c.png" alt="Yoga Studio Logo" />
+    <h1>Events &amp; Workshops</h1>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="events.html" aria-current="page">Events</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="workshop-highlight">
+      <h2>Weekend Workshop Series</h2>
+      <p>
+        Join our extended weekend gatherings to deepen your alignment, explore
+        guided pranayama, and connect with fellow practitioners.
+      </p>
+      <figure>
+        <img
+          src="Yoga_c/yoga-workshop_c.png"
+          alt="Small group of students practicing seated floor stretches during a weekend yoga workshop"
+        />
+        <figcaption>
+          Saturday morning workshop focusing on hip mobility, breathwork, and restorative recovery.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="upcoming-dates">
+      <h2>Upcoming Dates</h2>
+      <ul>
+        <li><strong>Breath &amp; Stillness Intensive:</strong> Saturday, December 5, 2026 &bull; 10:00 AM &ndash; 12:00 PM</li>
+        <li><strong>Foundations Alignment Lab:</strong> Saturday, December 12, 2026 &bull; 1:00 PM &ndash; 3:00 PM</li>
+        <li><strong>Winter Solstice Restorative Reset:</strong> Sunday, December 20, 2026 &bull; 4:00 PM &ndash; 6:00 PM</li>
+      </ul>
+    </section>
+
+    <section id="workshop-pass">
+      <h2>Request a Workshop Pass</h2>
+      <form action="/workshop-pass" method="post">
+        <div>
+          <label for="attendee-name">Attendee Name</label>
+          <input
+            type="text"
+            id="attendee-name"
+            name="attendeeName"
+            minlength="2"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="attendee-email">Email Address</label>
+          <input
+            type="email"
+            id="attendee-email"
+            name="attendeeEmail"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="workshop-date">Preferred Workshop Date</label>
+          <input
+            type="date"
+            id="workshop-date"
+            name="workshopDate"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="pass-quantity">Number of Passes (1 to 4)</label>
+          <input
+            type="number"
+            id="pass-quantity"
+            name="passQuantity"
+            min="1"
+            max="4"
+            value="1"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="accessibility-notes">Accessibility or Prop Notes</label>
+          <textarea
+            id="accessibility-notes"
+            name="accessibilityNotes"
+            rows="3"
+            placeholder="Let us know if you need chair support, extra bolsters, or quiet seating..."
+          ></textarea>
+        </div>
+
+        <button type="submit">Request Workshop Pass</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Yoga Studio</p>
+  </footer>
+</body>
+</html>
