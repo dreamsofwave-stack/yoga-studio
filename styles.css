@@ -1,0 +1,314 @@
+/* =========================================================
+   VISUAL DESIGN SYSTEM TOKENS
+   4 Main Colors | 2 Font Families | Consistent Spacing
+   ========================================================= */
+:root {
+  /* 4 Main Colors */
+  --color-canvas: #f6f4ef;      /* 1. Warm alabaster page background */
+  --color-surface: #ffffff;     /* 2. Crisp white cards & forms */
+  --color-primary: #1f3a32;     /* 3. Deep forest green brand color */
+  --color-accent: #b05535;      /* 4. Warm terracotta accent color */
+
+  /* Neutral Ink & Border Tones */
+  --color-ink: #1c221f;
+  --color-muted: #4f5954;
+  --color-border: #d7d2c6;
+
+  /* 2 Font Families */
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Type Scale */
+  --fs-sm: 0.9rem;
+  --fs-base: 1rem;
+  --fs-md: 1.15rem;
+  --fs-lg: 1.45rem;
+  --fs-xl: 2rem;
+
+  /* Spacing Scale */
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-md: 1rem;
+  --sp-lg: 1.75rem;
+  --sp-xl: 2.5rem;
+
+  /* Layout & Radius */
+  --container-w: 960px;
+  --line-measure: 65ch;
+  --radius: 8px;
+}
+
+/* =========================================================
+   BASE & TYPOGRAPHY
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-xs);
+}
+
+h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-md);
+  padding-bottom: var(--sp-xs);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--sp-xs);
+}
+
+p,
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: var(--sp-md);
+  max-width: var(--line-measure);
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   HEADER & NAVIGATION (REPEATED ACROSS ALL PAGES)
+   ========================================================= */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--sp-lg) var(--sp-md);
+  text-align: center;
+  border-bottom: 4px solid var(--color-accent);
+}
+
+header img {
+  display: block;
+  max-height: 64px;
+  width: auto;
+  margin: 0 auto var(--sp-xs);
+}
+
+header h1 {
+  color: var(--color-surface);
+  margin-bottom: var(--sp-md);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-xs);
+}
+
+nav a {
+  color: var(--color-surface);
+  text-decoration: none;
+  padding: var(--sp-xs) var(--sp-md);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a[aria-current="page"] {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+  outline: 2px solid var(--color-surface);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   MAIN LAYOUT, SECTIONS & MEDIA
+   ========================================================= */
+main {
+  max-width: var(--container-w);
+  margin: var(--sp-xl) auto;
+  padding: 0 var(--sp-md);
+}
+
+section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: var(--sp-lg);
+  margin-bottom: var(--sp-lg);
+}
+
+img,
+video,
+audio {
+  max-width: 100%;
+}
+
+img,
+video {
+  display: block;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+header img {
+  border-radius: 0;
+}
+
+audio {
+  width: 100%;
+  max-width: 480px;
+}
+
+figure {
+  margin: var(--sp-md) 0;
+}
+
+figcaption {
+  margin-top: var(--sp-xs);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   FORMS, FIELDSETS & CONTROLS
+   ========================================================= */
+form {
+  display: grid;
+  gap: var(--sp-md);
+  max-width: 600px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-xs) var(--sp-sm);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-accent);
+  border-color: var(--color-accent);
+  background-color: var(--color-surface);
+}
+
+fieldset {
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+legend {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 0 var(--sp-xs);
+}
+
+fieldset label {
+  font-weight: 400;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--color-surface);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--sp-sm) var(--sp-lg);
+  cursor: pointer;
+  justify-self: start;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  background-color: var(--color-accent);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   FOOTER (REPEATED ACROSS ALL PAGES)
+   ========================================================= */
+footer {
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-md);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+footer p {
+  margin: 0 auto;
+}
