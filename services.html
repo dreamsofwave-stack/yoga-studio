@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Yoga Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="Yoga_c/yoga-logo_c.png" alt="Yoga Studio Logo" />
+    <h1>Services &amp; Classes</h1>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="class-offerings">
+      <h2>Weekly Class Offerings</h2>
+      <ul>
+        <li><strong>Morning Vinyasa Flow (60 min):</strong> Energizing breath-to-movement sequences to build strength and mobility.</li>
+        <li><strong>Restorative &amp; Gentle Stretch (60 min):</strong> Supported floor postures designed to release tension and calm the nervous system.</li>
+        <li><strong>Foundations &amp; Alignment (45 min):</strong> Step-by-step posture breakdown ideal for newcomers or anyone refining core form.</li>
+      </ul>
+    </section>
+
+    <section id="guided-breathwork">
+      <h2>Sample Guided Breathing Session</h2>
+      <p>
+        Try a short guided breathwork track from our restorative series before arriving for class.
+      </p>
+      <audio controls preload="metadata">
+        <source src="Yoga_c/yoga-breathing_c.mp3" type="audio/mpeg" />
+        <p>
+          Your browser does not support HTML5 audio playback. You can
+          <a href="Yoga_c/yoga-breathing_c.mp3" download>download the guided breathing audio (MP3)</a>.
+        </p>
+      </audio>
+    </section>
+
+    <section id="class-registration">
+      <h2>Reserve a Class Spot</h2>
+      <form action="/register" method="post">
+        <div>
+          <label for="student-name">Full Name</label>
+          <input
+            type="text"
+            id="student-name"
+            name="studentName"
+            minlength="2"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="student-email">Email Address</label>
+          <input
+            type="email"
+            id="student-email"
+            name="studentEmail"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="class-choice">Select Class Type</label>
+          <select id="class-choice" name="classChoice">
+            <option value="vinyasa">Morning Vinyasa Flow</option>
+            <option value="restorative">Restorative &amp; Gentle Stretch</option>
+            <option value="foundations">Foundations &amp; Alignment</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Experience Level</legend>
+          <label>
+            <input type="radio" name="experience" value="beginner" checked />
+            Beginner
+          </label>
+          <label>
+            <input type="radio" name="experience" value="intermediate" />
+            Intermediate
+          </label>
+          <label>
+            <input type="radio" name="experience" value="all-levels" />
+            All Levels
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Studio Props Needed</legend>
+          <label>
+            <input type="checkbox" name="props" value="mat" />
+            Yoga Mat
+          </label>
+          <label>
+            <input type="checkbox" name="props" value="blocks" />
+            Foam Blocks
+          </label>
+          <label>
+            <input type="checkbox" name="props" value="strap" />
+            Stretching Strap
+          </label>
+        </fieldset>
+
+        <button type="submit">Reserve Spot</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Yoga Studio</p>
+  </footer>
+</body>
+</html>
